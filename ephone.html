@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ePhone 15 Pro – Pear (Clone)</title>
+  <meta name="description" content="Pear PDP clone in plain HTML and CSS.">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="global-nav">
+    <div class="container nav-inner">
+      <div class="nav-left">
+        <a class="nav-link" href="./index.html" aria-label="Pear"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" role="img" aria-label="Pear logo"><path d="M13.5 3.5c0-1.1.9-2 2-2 .28 0 .5.22.5.5 0 1.66-1.34 3-3 3-.28 0-.5-.22-.5-.5 0-.35.06-.68.18-1 .26.16.53.24.82.24zM10 6.5c-1.66 0-3 1.34-3 3 0 .33.05.65.14.95C5.84 11.2 5 12.76 5 14.5 5 17.54 7.46 20 10.5 20h1c3.04 0 5.5-2.46 5.5-5.5 0-1.74-.84-3.3-2.14-4.05.09-.3.14-.62.14-.95 0-1.66-1.34-3-3-3H10z"/></svg></span></a>
+        <a class="nav-link hide-sm" href="#">ePhone</a>
+        <a class="nav-link hide-sm" href="#">eMac</a>
+        <a class="nav-link hide-sm" href="#">ePad</a>
+        <a class="nav-link hide-sm" href="#">eWatch</a>
+        <a class="nav-link hide-sm" href="#">ePods</a>
+        <a class="nav-link hide-sm" href="#">eTV &amp; Home</a>
+        <a class="nav-link hide-sm" href="#">Entertainment</a>
+        <a class="nav-link hide-sm" href="#">Accessories</a>
+        <a class="nav-link hide-sm" href="#">Support</a>
+      </div>
+      <div class="nav-right">
+        <a class="nav-link" href="./cart.html" aria-label="Shopping Cart">
+          <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" role="img" aria-label="Cart icon"><path d="M3 4h2l2.4 8.4A2 2 0 0 0 9.3 14h7.6a2 2 0 0 0 1.9-1.4L21 7H6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="19" r="1.8" fill="currentColor"/><circle cx="17" cy="19" r="1.8" fill="currentColor"/></svg></span>
+          <span class="hidden-visually">Cart</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <nav class="subnav">
+    <div class="container subnav-inner">
+      <div class="title">
+        <strong>ePhone 15 Pro</strong>
+      </div>
+      <div class="links">
+        <a href="#overview">Overview</a>
+        <a href="#tech-specs">Tech Specs</a>
+        <a href="#buy" class="button primary" style="padding:6px 12px; font-weight:600;">Buy</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section id="overview" class="hero">
+      <div class="container">
+        <div class="kicker">ePhone 15 Pro</div>
+        <h1>Titanium. So strong. So light. So Pro.</h1>
+        <p class="lead">From $999 or $41.62/mo. for 24 mo.*</p>
+        <div class="cta">
+          <a href="#buy" class="button primary">Buy</a>
+          <a href="#tech-specs" class="button secondary">View Tech Specs</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="buy" class="buy">
+      <div class="container buy-grid">
+        <div class="product-visual">
+          <div class="visual-card">
+            <div class="device-silhouette">
+              <div class="iphone"></div>
+            </div>
+          </div>
+        </div>
+        <div class="configurator card">
+          <div class="split">
+            <h2>Buy ePhone 15 Pro</h2>
+            <span class="badge">New</span>
+          </div>
+          <p class="price">From $999</p>
+          <p class="per-month">or $41.62/mo. for 24 mo.*</p>
+
+          <div class="option-group">
+            <div class="label-row">
+              <div class="label">Finish</div>
+              <div class="capacity-note">Titanium</div>
+            </div>
+            <div class="chips colors">
+              <div class="chip">
+                <input type="radio" id="finish-natural" name="finish" checked>
+                <label for="finish-natural">
+                  <span class="swatch natural"></span>
+                  <span>Natural</span>
+                </label>
+              </div>
+              <div class="chip">
+                <input type="radio" id="finish-blue" name="finish">
+                <label for="finish-blue">
+                  <span class="swatch blue"></span>
+                  <span>Blue</span>
+                </label>
+              </div>
+              <div class="chip">
+                <input type="radio" id="finish-white" name="finish">
+                <label for="finish-white">
+                  <span class="swatch white"></span>
+                  <span>White</span>
+                </label>
+              </div>
+              <div class="chip">
+                <input type="radio" id="finish-black" name="finish">
+                <label for="finish-black">
+                  <span class="swatch black"></span>
+                  <span>Black</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="option-group">
+            <div class="label-row">
+              <div class="label">Capacity</div>
+              <div class="capacity-note">Choose how much space you need</div>
+            </div>
+            <div class="chips">
+              <div class="chip">
+                <input type="radio" id="cap-128" name="capacity" checked>
+                <label for="cap-128">
+                  <strong>128GB</strong>
+                  <small class="capacity-note">$999</small>
+                </label>
+              </div>
+              <div class="chip">
+                <input type="radio" id="cap-256" name="capacity">
+                <label for="cap-256">
+                  <strong>256GB</strong>
+                  <small class="capacity-note">$1099</small>
+                </label>
+              </div>
+              <div class="chip">
+                <input type="radio" id="cap-512" name="capacity">
+                <label for="cap-512">
+                  <strong>512GB</strong>
+                  <small class="capacity-note">$1299</small>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="meta-row">
+            <div class="meta">Free delivery</div>
+            <div class="meta">In stock</div>
+          </div>
+
+          <div class="action-row">
+            <a class="button primary" href="./cart.html">Add to Cart</a>
+            <a class="button secondary" href="#">Save</a>
+          </div>
+          <p class="klarna-note">Fast, free delivery and free returns.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="container grid-3">
+        <div class="feature-card card">
+          <h3>P17 Pro chip</h3>
+          <p>Game‑changing graphics performance and efficiency.</p>
+        </div>
+        <div class="feature-card card">
+          <h3>Titanium design</h3>
+          <p>Strong, light, and durable with textured matte glass.</p>
+        </div>
+        <div class="feature-card card">
+          <h3>USB‑C</h3>
+          <p>Superfast data transfers and charging with USB‑C.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="tech-specs" class="tech-specs">
+      <div class="container">
+        <h2>Tech Specs</h2>
+        <div class="specs-grid">
+          <div class="spec">
+            <h4>Display</h4>
+            <ul>
+              <li>6.1‑inch (diagonal) all‑screen OLED</li>
+              <li>Pear Retina XQ display</li>
+              <li>FluidMotion technology</li>
+            </ul>
+          </div>
+          <div class="spec">
+            <h4>Camera</h4>
+            <ul>
+              <li>48MP Main</li>
+              <li>12MP Ultra Wide</li>
+              <li>12MP Telephoto</li>
+            </ul>
+          </div>
+          <div class="spec">
+            <h4>Power and Battery</h4>
+            <ul>
+              <li>Built‑in rechargeable lithium‑ion</li>
+              <li>PearSafe wireless charging</li>
+              <li>USB‑C charging</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footnote">* Pricing for ePhone 15 Pro is indicative and may vary by region. Financing and carrier offers available where applicable. Terms apply.</p>
+      <div class="legal">
+        <small>Copyright © 2025 Pear. All rights reserved.</small>
+      </div>
+    </div>
+  </footer>
+</body>
+</html> 

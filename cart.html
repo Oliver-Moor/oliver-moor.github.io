@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your Cart – Pear (Clone)</title>
+  <meta name="description" content="Pear Cart clone in plain HTML and CSS.">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="global-nav">
+    <div class="container nav-inner">
+      <div class="nav-left">
+        <a class="nav-link" href="./index.html" aria-label="Pear"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" role="img" aria-label="Pear logo"><path d="M13.5 3.5c0-1.1.9-2 2-2 .28 0 .5.22.5.5 0 1.66-1.34 3-3 3-.28 0-.5-.22-.5-.5 0-.35.06-.68.18-1 .26.16.53.24.82.24zM10 6.5c-1.66 0-3 1.34-3 3 0 .33.05.65.14.95C5.84 11.2 5 12.76 5 14.5 5 17.54 7.46 20 10.5 20h1c3.04 0 5.5-2.46 5.5-5.5 0-1.74-.84-3.3-2.14-4.05.09-.3.14-.62.14-.95 0-1.66-1.34-3-3-3H10z"/></svg></span></a>
+        <a class="nav-link hide-sm" href="#">ePhone</a>
+        <a class="nav-link hide-sm" href="#">eMac</a>
+        <a class="nav-link hide-sm" href="#">ePad</a>
+        <a class="nav-link hide-sm" href="#">eWatch</a>
+        <a class="nav-link hide-sm" href="#">ePods</a>
+        <a class="nav-link hide-sm" href="#">eTV &amp; Home</a>
+        <a class="nav-link hide-sm" href="#">Entertainment</a>
+        <a class="nav-link hide-sm" href="#">Accessories</a>
+        <a class="nav-link hide-sm" href="#">Support</a>
+      </div>
+      <div class="nav-right">
+        <a class="nav-link" href="./cart.html" aria-label="Shopping Cart">
+          <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" role="img" aria-label="Cart icon"><path d="M3 4h2l2.4 8.4A2 2 0 0 0 9.3 14h7.6a2 2 0 0 0 1.9-1.4L21 7H6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="19" r="1.8" fill="currentColor"/><circle cx="17" cy="19" r="1.8" fill="currentColor"/></svg></span>
+          <span class="hidden-visually">Cart</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="bag">
+    <div class="container bag-grid">
+      <section class="bag-items">
+        <h1>Your cart</h1>
+
+        <article class="bag-item">
+          <div class="thumb">ePhone</div>
+          <div class="details">
+            <h3>ePhone 15 Pro</h3>
+            <div class="muted">Natural Titanium • 128GB</div>
+            <div class="controls">
+              <label class="muted" for="qty">Quantity</label>
+              <select id="qty" class="qty-select">
+                <option selected>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+              </select>
+              <a class="link-muted" href="#">Remove</a>
+            </div>
+            <div class="muted" style="margin-top:6px;">Ships: Today • Free Delivery</div>
+          </div>
+          <div class="price">$999.00</div>
+        </article>
+
+        <article class="bag-item">
+          <div class="thumb">Case</div>
+          <div class="details">
+            <h3>ePhone 15 Pro FineWeave Case</h3>
+            <div class="muted">Black</div>
+            <div class="controls">
+              <label class="muted" for="qty2">Quantity</label>
+              <select id="qty2" class="qty-select">
+                <option selected>1</option>
+                <option>2</option>
+                <option>3</option>
+              </select>
+              <a class="link-muted" href="#">Remove</a>
+            </div>
+            <div class="muted" style="margin-top:6px;">Ships: Today • Free Delivery</div>
+          </div>
+          <div class="price">$59.00</div>
+        </article>
+      </section>
+
+      <aside class="summary">
+        <div class="card summary-card">
+          <div class="summary-row">
+            <div>Subtotal</div>
+            <div>$1,058.00</div>
+          </div>
+          <div class="summary-row">
+            <div>Estimated tax</div>
+            <div>Calculated at checkout</div>
+          </div>
+          <div class="summary-row total">
+            <div>Total</div>
+            <div>$1,058.00</div>
+          </div>
+          <div class="checkout-buttons">
+            <a href="#" class="button primary">Check out</a>
+            <a href="#" class="button pearpay">Check out with Pear Pay</a>
+            <a href="./index.html" class="button secondary">Continue shopping</a>
+          </div>
+          <p class="footnote" style="margin-top:10px;">Delivery is free. Returns are free for 14 days.</p>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footnote">Pricing and availability subject to change. This is a static demo.</p>
+      <div class="legal">
+        <small>Copyright © 2025 Pear. All rights reserved.</small>
+      </div>
+    </div>
+  </footer>
+</body>
+</html> 
