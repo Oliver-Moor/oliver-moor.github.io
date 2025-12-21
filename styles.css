@@ -304,6 +304,7 @@ header h1 {
     justify-content: center;
     gap: 30px;
     margin-top: 20px;
+    flex-wrap: wrap;
 }
 
 .legend-item {
@@ -311,6 +312,7 @@ header h1 {
     align-items: center;
     gap: 10px;
     font-size: 1rem;
+    white-space: nowrap;
 }
 
 .legend-dot {
@@ -621,13 +623,13 @@ header h1 {
     }
 
     .chart-legend {
-        flex-direction: column;
-        gap: 12px;
-        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 15px;
     }
 
     .legend-item {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
+        gap: 8px;
     }
 
     /* History Section */
@@ -771,6 +773,21 @@ header h1 {
 
     #contractionChart {
         height: 250px;
+    }
+
+    .chart-legend {
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .legend-item {
+        font-size: 0.8rem;
+        gap: 6px;
+    }
+
+    .legend-dot {
+        width: 12px;
+        height: 12px;
     }
 
     .history-controls .control-btn {
