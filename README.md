@@ -1,4 +1,4 @@
-# The Pregnant Nerd - Statistical Contraction Timer
+# Baby Birth Predictor
 
 A sophisticated contraction timer web app that uses statistical analysis to predict birth timing through standard deviation convergence.
 
