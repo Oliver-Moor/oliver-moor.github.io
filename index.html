@@ -130,9 +130,11 @@
             <div class="history-header">
                 <h2>Contraction History</h2>
                 <div class="history-controls">
+                    <button id="importBtn" class="control-btn">📥 Import CSV</button>
                     <button id="exportBtn" class="control-btn">📊 Export CSV</button>
                     <button id="clearAllBtn" class="control-btn danger">🗑️ Clear All</button>
                 </div>
+                <input type="file" id="importFileInput" accept=".csv" style="display: none;">
             </div>
             <div id="contractionList" class="contraction-list"></div>
         </section>

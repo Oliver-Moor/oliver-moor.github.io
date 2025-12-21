@@ -48,6 +48,7 @@ class ContractionTimer {
 
     attachEventListeners() {
         this.mainButton.addEventListener('click', () => this.handleMainButtonClick());
+        document.getElementById('importBtn').addEventListener('click', () => this.triggerImport());
         document.getElementById('exportBtn').addEventListener('click', () => this.exportToCSV());
         document.getElementById('clearAllBtn').addEventListener('click', () => this.clearAll());
         document.getElementById('calcCustomBtn').addEventListener('click', () => this.calculateCustomAverage());
@@ -635,8 +636,141 @@ class ContractionTimer {
     }
 
     // =======================
-    // EXPORT FUNCTIONALITY
+    // IMPORT/EXPORT FUNCTIONALITY
     // =======================
+
+    triggerImport() {
+        const fileInput = document.getElementById('importFileInput');
+        fileInput.onchange = (e) => this.importFromCSV(e);
+        fileInput.click();
+    }
+
+    importFromCSV(event) {
+        const file = event.target.files[0];
+        if (!file) return;
+
+        const reader = new FileReader();
+        reader.onload = (e) => {
+            try {
+                const csvContent = e.target.result;
+                const lines = csvContent.split('\n').filter(line => line.trim() !== '');
+                
+                // Check if file has header
+                if (lines.length < 2) {
+                    alert('CSV file is empty or invalid!');
+                    return;
+                }
+
+                // Parse header
+                const header = lines[0].toLowerCase();
+                if (!header.includes('start time') || !header.includes('end time')) {
+                    alert('Invalid CSV format! File must contain "Start Time" and "End Time" columns.');
+                    return;
+                }
+
+                // Parse data rows
+                const importedContractions = [];
+                for (let i = 1; i < lines.length; i++) {
+                    const line = lines[i].trim();
+                    if (!line) continue;
+
+                    // Parse CSV line (handling quoted values)
+                    const values = this.parseCSVLine(line);
+                    
+                    if (values.length < 3) continue;
+
+                    // Extract start time and end time (columns 1 and 2, index 0 is the row number)
+                    const startTimeStr = values[1];
+                    const endTimeStr = values[2];
+
+                    // Parse ISO date strings
+                    const startTime = new Date(startTimeStr).getTime();
+                    const endTime = new Date(endTimeStr).getTime();
+
+                    // Validate timestamps
+                    if (isNaN(startTime) || isNaN(endTime)) {
+                        console.warn(`Skipping invalid row ${i}: Invalid date format`);
+                        continue;
+                    }
+
+                    if (endTime <= startTime) {
+                        console.warn(`Skipping invalid row ${i}: End time must be after start time`);
+                        continue;
+                    }
+
+                    importedContractions.push({
+                        startTime: startTime,
+                        endTime: endTime
+                    });
+                }
+
+                if (importedContractions.length === 0) {
+                    alert('No valid contractions found in the CSV file!');
+                    return;
+                }
+
+                // Ask user if they want to append or replace
+                const action = confirm(
+                    `Found ${importedContractions.length} contractions in the file.\n\n` +
+                    `Click OK to APPEND to existing data (${this.contractions.length} contractions).\n` +
+                    `Click Cancel to REPLACE all existing data.`
+                );
+
+                if (action) {
+                    // Append
+                    this.contractions = [...this.contractions, ...importedContractions];
+                } else {
+                    // Replace
+                    this.contractions = importedContractions;
+                }
+
+                // Sort by start time to ensure chronological order
+                this.contractions.sort((a, b) => a.startTime - b.startTime);
+
+                // Save and update UI
+                this.saveToStorage();
+                this.updateUI();
+
+                alert(`Successfully imported ${importedContractions.length} contractions!`);
+
+                // Reset file input
+                event.target.value = '';
+            } catch (error) {
+                console.error('Import error:', error);
+                alert('Error importing CSV file: ' + error.message);
+            }
+        };
+
+        reader.onerror = () => {
+            alert('Error reading file!');
+        };
+
+        reader.readAsText(file);
+    }
+
+    parseCSVLine(line) {
+        const values = [];
+        let currentValue = '';
+        let insideQuotes = false;
+
+        for (let i = 0; i < line.length; i++) {
+            const char = line[i];
+            
+            if (char === '"') {
+                insideQuotes = !insideQuotes;
+            } else if (char === ',' && !insideQuotes) {
+                values.push(currentValue.trim());
+                currentValue = '';
+            } else {
+                currentValue += char;
+            }
+        }
+        
+        // Add the last value
+        values.push(currentValue.trim());
+        
+        return values;
+    }
 
     exportToCSV() {
         if (this.contractions.length === 0) {
