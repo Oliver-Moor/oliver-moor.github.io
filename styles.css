@@ -487,36 +487,294 @@ header h1 {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+
+    header {
+        margin-bottom: 30px;
+        padding: 15px;
+    }
+
     header h1 {
         font-size: 2rem;
     }
 
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    /* Instructions Section */
+    .instructions-section {
+        padding: 15px;
+    }
+
+    .instructions-section h2 {
+        font-size: 1.1rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    .instruction-item h3 {
+        font-size: 1rem;
+    }
+
+    /* Button Section */
+    .button-section {
+        margin: 40px 0;
+    }
+
     .big-button {
-        height: 150px;
-        font-size: 2rem;
+        height: 120px;
+        font-size: 1.5rem;
+        border-width: 5px;
+        letter-spacing: 1px;
     }
 
     .timer-display {
-        font-size: 3rem;
+        font-size: 2.5rem;
+        margin-top: 20px;
+    }
+
+    /* Stats Section */
+    .stats-section {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        margin: 30px 0;
+    }
+
+    .stat-card {
+        padding: 15px;
+    }
+
+    .stat-card h3 {
+        font-size: 0.85rem;
+        margin-bottom: 10px;
     }
 
     .stat-value {
+        font-size: 1.4rem;
+    }
+
+    /* Prediction Section */
+    .prediction-section {
+        margin: 40px 0;
+    }
+
+    .prediction-card {
+        padding: 20px;
+    }
+
+    .prediction-card h2 {
         font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+    .prediction-stat {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        padding: 12px;
+    }
+
+    .prediction-stat label {
+        font-size: 1rem;
+    }
+
+    .prediction-value {
+        font-size: 1.3rem;
+    }
+
+    .prediction-time {
+        font-size: 1.5rem;
+    }
+
+    /* Chart Section */
+    .chart-section {
+        margin: 40px 0;
+        padding: 15px;
+    }
+
+    .chart-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .chart-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .chart-controls {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .control-btn {
+        padding: 10px 16px;
+        font-size: 0.9rem;
+    }
+
+    #contractionChart {
+        height: 300px;
+    }
+
+    .chart-legend {
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-start;
+    }
+
+    .legend-item {
+        font-size: 0.9rem;
+    }
+
+    /* History Section */
+    .history-section {
+        margin: 40px 0;
     }
 
     .history-header {
         flex-direction: column;
         align-items: flex-start;
+        gap: 15px;
+    }
+
+    .history-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .history-controls {
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .history-controls .control-btn {
+        flex: 1;
+        min-width: calc(50% - 5px);
+        font-size: 0.85rem;
+        padding: 10px 12px;
     }
 
     .contraction-item {
         grid-template-columns: 1fr;
-        gap: 15px;
+        gap: 12px;
+        padding: 15px;
+    }
+
+    .contraction-time {
+        font-size: 1rem;
     }
 
     .contraction-stats {
         flex-direction: column;
-        gap: 10px;
+        gap: 8px;
+        font-size: 0.9rem;
+    }
+
+    .contraction-actions {
+        width: 100%;
+    }
+
+    .action-btn {
+        flex: 1;
+        padding: 10px 16px;
+    }
+
+    /* Custom Section */
+    .custom-section {
+        margin: 30px 0;
+        padding: 20px;
+    }
+
+    .custom-section h3 {
+        font-size: 1.3rem;
+    }
+
+    .custom-input {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .custom-input input {
+        min-width: 100%;
+        width: 100%;
+    }
+
+    .custom-input button {
+        width: 100%;
+    }
+
+    .custom-input .stat-value {
+        text-align: center;
+        padding: 10px;
+        background: #2a2a2a;
+        border-radius: 8px;
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 1.6rem;
+    }
+
+    .subtitle {
+        font-size: 0.9rem;
+    }
+
+    .big-button {
+        height: 100px;
+        font-size: 1.2rem;
+        border-width: 4px;
+    }
+
+    .timer-display {
+        font-size: 2rem;
+        margin-top: 15px;
+    }
+
+    .stats-section {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .stat-card {
+        padding: 12px;
+    }
+
+    .prediction-card {
+        padding: 15px;
+    }
+
+    .prediction-card h2 {
+        font-size: 1.3rem;
+    }
+
+    .chart-section {
+        padding: 12px;
+    }
+
+    .chart-controls {
+        flex-direction: column;
+    }
+
+    .chart-controls .control-btn {
+        width: 100%;
+    }
+
+    #contractionChart {
+        height: 250px;
+    }
+
+    .history-controls .control-btn {
+        min-width: 100%;
     }
 }
 

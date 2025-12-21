@@ -44,11 +44,15 @@ class ContractionTimer {
         // Instructions toggle
         this.instructionsToggle = document.getElementById('instructionsToggle');
         this.instructionsSection = document.getElementById('instructionsSection');
+        
+        // Import file input
+        this.importFileInput = document.getElementById('importFileInput');
     }
 
     attachEventListeners() {
         this.mainButton.addEventListener('click', () => this.handleMainButtonClick());
         document.getElementById('importBtn').addEventListener('click', () => this.triggerImport());
+        this.importFileInput.addEventListener('change', (e) => this.importFromCSV(e));
         document.getElementById('exportBtn').addEventListener('click', () => this.exportToCSV());
         document.getElementById('clearAllBtn').addEventListener('click', () => this.clearAll());
         document.getElementById('calcCustomBtn').addEventListener('click', () => this.calculateCustomAverage());
@@ -640,9 +644,7 @@ class ContractionTimer {
     // =======================
 
     triggerImport() {
-        const fileInput = document.getElementById('importFileInput');
-        fileInput.onchange = (e) => this.importFromCSV(e);
-        fileInput.click();
+        this.importFileInput.click();
     }
 
     importFromCSV(event) {
